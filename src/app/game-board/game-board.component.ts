@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-game-board',
   templateUrl: './game-board.component.html',
-  styleUrls: ['./game-board.component.css']
+  standalone: true,
+  imports: [
+    NgIf,
+    NgForOf
+  ],
+  styleUrls: ['./game-board.component.scss']
 })
+
 export class GameBoardComponent {
   squares: string[] = Array(9).fill(null);
   xIsNext: boolean = true;
