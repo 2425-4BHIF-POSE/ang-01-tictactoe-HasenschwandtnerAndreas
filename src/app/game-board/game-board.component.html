@@ -1,0 +1,17 @@
+<h1>Tic Tac Toe</h1>
+<button (click)="newGame()">Start new game</button>
+
+<h2 *ngIf="winner">
+  Player {{ winner }} won the game!
+</h2>
+
+<h2 *ngIf="!winner">
+  Current Player: {{ player }}
+</h2>
+
+<div class="board">
+  <button *ngFor="let val of squares; let i = index"
+          (click)="makeMove(i)">
+    {{ val }}
+  </button>
+</div>
